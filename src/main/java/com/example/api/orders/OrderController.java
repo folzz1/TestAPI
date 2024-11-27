@@ -23,4 +23,12 @@ public class OrderController {
     public void add(@RequestBody Order order) {
         orderService.add(order);
     }
+
+    @DeleteMapping(path = "delete/{id}")
+    public void delete(@PathVariable Long id) {
+        Order order = new Order();
+        order.setId(id);
+        orderService.delete(order);
+    }
+
 }

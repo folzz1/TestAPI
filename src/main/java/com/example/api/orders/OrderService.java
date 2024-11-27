@@ -20,4 +20,8 @@ public class OrderService {
     public void add(Order order) {
         orderRepository.save(order);
     }
+
+    public void delete(Order order) {
+        orderRepository.delete(order);
+    }
 }
