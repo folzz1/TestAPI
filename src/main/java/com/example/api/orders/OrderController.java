@@ -31,4 +31,15 @@ public class OrderController {
         orderService.delete(order);
     }
 
+    @GetMapping(path = "{id}")
+    public Order get(@PathVariable Long id) {
+        orderService.getOrderById(id);
+        return orderService.getOrderById(id);
+    }
+
+    @GetMapping(path = "put/{id}")
+    public void put(@PathVariable Long id, @RequestBody Order order) {
+        order.setId(id);
+        orderService.update(order);
+    }
 }
